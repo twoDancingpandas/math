@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std; 
+
+// x = number in Base 10
+// y = Base to convert to 
+
+void printInBase(int x, int y)
+{
+   if ( x < y )
+   {
+      cout << x;
+      return;
+   }
+
+   int rem = x%y;
+   printInBase(x/y, y);
+   cout << rem;
+}
