@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// really useful for combo problems like 2014 AIME II #9 and 2018 AIME I #12
+
+void allPossibleSubset(int arr[], int n)
+{
+    int count = pow(2, n);
+    for (int i = 0; i < count; i++) {
+        vector<int> subset; // this vector stores each subset
+        for (int j = 0; j < n; j++) {
+            if ((i & (1 << j)) != 0)
+                subset.push_back(arr[j]); 
+        }
+        // printing out the subset
+        for(int num: subset){
+            cout<<num<<" "; 
+        }
+        cout<<endl; 
+    }
+}
+
+int main()
+{
+    int size=3;
+    
+    int arr[3] ={1,2,3}; 
+
+    allPossibleSubset(arr, size);
+
+    return 0;
+}
+
