@@ -1,0 +1,43 @@
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+void FindPrimeFactors(){
+
+  int number, i = 1, j, count;
+    
+	cin >> number;
+	
+  vector<int> primes;  // vector to store primes
+	
+	while (i <= number)
+   	{
+   		count = 0;
+    	if(number % i == 0)
+      	{
+      		j = 1;
+      		while(j <= i)
+      		{
+      			if(i % j == 0)
+      			{
+      				count++;
+				}
+				j++;
+			}
+			if(count == 2)
+			{
+			    primes.push_back(i); 
+			} 
+      	}
+    	i++;
+   	}
+   	for(int i: primes){
+   	    cout<<i<<endl; 
+   	}
+}
+
+int main()
+{
+	FindPrimeFactors(); 
+}
